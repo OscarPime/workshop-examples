@@ -4,10 +4,13 @@
    become: yes
   
    tasks:
-    - name: Ensure group dbadmin exists
+    - name: Ensure groups exists
       group:
-       name: dbadmin
+       name: "{{ item.group1 }}"
        state: present
+      loop:
+       - { group1: 'dbadmin' }
+       - { group1: 'webadmin' }
       
     - name: Crea usuario
       user:

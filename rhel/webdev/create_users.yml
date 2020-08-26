@@ -23,4 +23,10 @@
        - { username: 'ops1', groups: 'dbadmin', home1: '/home/dbadmin' }
        - { username: 'ops2', groups: 'dbadmin', home1: '/home/dbadmin' }
        - { username: 'ops3', groups: 'webadmin', home1: '/home/webadmin' }
+       
+    - name: Permisos de sudo
+      copy:
+       content: "%webadmin ALL=(ALL) NOPASSWD: ALL"
+       dest: /etc/sudoers.d/webadmin
+       mode: 0440
     

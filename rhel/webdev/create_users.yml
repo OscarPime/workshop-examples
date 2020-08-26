@@ -17,8 +17,10 @@
        name: "{{ item.username }}"
        state: present
        groups: "{{ item.groups }}"
+       createhome: yes
+       home: "{{ item.home1 }}"
       loop:
-       - { username: 'ops1', groups: 'dbadmin' }
-       - { username: 'ops2', groups: 'dbadmin' }
-       - { username: 'ops3', groups: 'webadmin' }
+       - { username: 'ops1', groups: 'dbadmin', home1: '/home/dbadmin' }
+       - { username: 'ops2', groups: 'dbadmin', home1: '/home/dbadmin' }
+       - { username: 'ops3', groups: 'webadmin', home1: '/home/webadmin' }
     

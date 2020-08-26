@@ -4,10 +4,10 @@
    become: yes
   
    tasks:
-    - name: Ensure group "somegroup" exists
+    - name: Ensure group dbadmin exists
       group:
-      name: dbadmin
-      state: present
+       name: dbadmin
+       state: present
       
     - name: Crea usuario
       user:

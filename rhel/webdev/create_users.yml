@@ -1,18 +1,18 @@
 ---
  - name: Create a login user
-  hosts: web
-  become: yes
+   hosts: web
+   become: yes
   
-  tasks:
-   - name: Crea usuario
-    user:
-     name: "{{ item.username }}"
-     state: present
-     groups: "{{ item.groups }}"
-     createhome: yes
-     home: "{{ item.homes }}"
-    loop:
-     - { username: 'ops1', groups: 'dbadmin', homes: '/home/dbadmin' }
-     - { username: 'ops2', groups: 'dbadmin', homes: '/home/dbadmin' }
-     - { username: 'ops3', groups: 'webadmin', homes: '/home/webadmin' }
+   tasks:
+    - name: Crea usuario
+      user:
+       name: "{{ item.username }}"
+       state: present
+       groups: "{{ item.groups }}"
+       createhome: yes
+       home: "{{ item.homes }}"
+      loop:
+       - { username: 'ops1', groups: 'dbadmin', homes: '/home/dbadmin' }
+       - { username: 'ops2', groups: 'dbadmin', homes: '/home/dbadmin' }
+       - { username: 'ops3', groups: 'webadmin', homes: '/home/webadmin' }
     

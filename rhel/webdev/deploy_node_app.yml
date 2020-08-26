@@ -11,7 +11,7 @@
 
   - name: copy node app to webapp directory
     template:
-      src: hello.js.j2
+      src: hello.js
       dest: /var/www/app/hello.js
 
   - name: restart nodejs

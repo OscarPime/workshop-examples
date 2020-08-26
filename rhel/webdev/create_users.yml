@@ -4,6 +4,11 @@
    become: yes
   
    tasks:
+    - name: Ensure group "somegroup" exists
+      group:
+      name: dbadmin
+      state: present
+      
     - name: Crea usuario
       user:
        name: "{{ item.username }}"
